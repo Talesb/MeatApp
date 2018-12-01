@@ -14,6 +14,7 @@ import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shoppin
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantsService } from './restaurants/restaurants.service';
+import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 
 
 
@@ -30,7 +31,8 @@ import { RestaurantsService } from './restaurants/restaurants.service';
     RestaurantDetailComponent,
     MenuComponent,
     ShoppingCartComponent,
-    MenuItemComponent
+    MenuItemComponent,
+    ReviewsComponent
   ],
   imports: [
     BrowserModule,
