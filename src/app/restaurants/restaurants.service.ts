@@ -6,6 +6,8 @@ import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { ErrorHandler } from "app/app.error-handler";
+import { analyzeAndValidateNgModules } from "@angular/compiler";
+import { MenuItem } from "app/restaurant-detail/menu-item/menu-item.model";
 
 
 @Injectable()
@@ -23,6 +25,22 @@ export class RestaurantsService {
     restaurantById(id: String): Observable<Restaurant> {
         return this.http.get(`${MEAT_API}/restaurants/${id}`)
             .map(response => response.json())
+            .catch(ErrorHandler.handleError);
+
+    }
+
+    reviewsOfRestaurants(id: String): Observable<any> {
+
+        return this.http.get(`${MEAT_API}/restaurants/${id}/reviews`)
+            .map(any => any.json())
+            .catch(ErrorHandler.handleError);
+
+    }
+
+    menusOfRestaurants(id: String): Observable<MenuItem[]> {
+
+        return this.http.get(`${MEAT_API}/restaurants/${id}/menu`)
+            .map(any => any.json())
             .catch(ErrorHandler.handleError);
 
     }
