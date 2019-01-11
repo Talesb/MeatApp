@@ -19,6 +19,7 @@ import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-
 import { OrderComponent } from './order/order.component';
 import { FormsModule } from '@angular/forms';
 import{InputComponent} from 'app/shared/input/input.component';
+import { RadioComponent } from 'app/shared/radio/radio.component';
 
 
 
@@ -38,7 +39,8 @@ import{InputComponent} from 'app/shared/input/input.component';
     MenuItemComponent,
     ReviewsComponent,
     OrderComponent,
-    InputComponent
+    InputComponent,
+    RadioComponent
   ],
   imports: [
     BrowserModule,
