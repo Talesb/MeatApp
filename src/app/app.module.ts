@@ -20,6 +20,7 @@ import { OrderComponent } from './order/order.component';
 import { FormsModule } from '@angular/forms';
 import{InputComponent} from 'app/shared/input/input.component';
 import { RadioComponent } from 'app/shared/radio/radio.component';
+import { OrderItensComponent } from './order/order-itens/order-itens.component';
 
 
 
@@ -40,7 +41,8 @@ import { RadioComponent } from 'app/shared/radio/radio.component';
     ReviewsComponent,
     OrderComponent,
     InputComponent,
-    RadioComponent
+    RadioComponent,
+    OrderItensComponent
   ],
   imports: [
     BrowserModule,
