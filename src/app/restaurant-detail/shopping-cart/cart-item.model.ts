@@ -21,6 +21,10 @@ export class CartItem {
         this.quantity += quantity;
     }
 
+    reduceQuantity(quantity: number) {
+        this.quantity -= quantity;
+    }
+
     quantityValue(): number {
         return this.quantity;
     }
