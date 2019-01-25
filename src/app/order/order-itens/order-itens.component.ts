@@ -14,6 +14,8 @@ export class OrderItensComponent implements OnInit {
   @Output() decreaseQty = new EventEmitter<CartItem>();
   @Output() remove = new EventEmitter<CartItem>();
 
+
+
   constructor() { }
 
   ngOnInit() {
@@ -32,5 +34,7 @@ export class OrderItensComponent implements OnInit {
   emitRemove(item: CartItem) {
     this.remove.emit(item);
   }
+
+
 
 }
