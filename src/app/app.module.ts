@@ -17,7 +17,7 @@ import { RestaurantsService } from './restaurants/restaurants.service';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service';
 import { OrderComponent } from './order/order.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from 'app/shared/input/input.component';
 import { RadioComponent } from 'app/shared/radio/radio.component';
 import { OrderItensComponent } from './order/order-itens/order-itens.component';
@@ -49,15 +49,16 @@ import { RatingComponent } from './shared/rating/rating.component';
     OrderItensComponent,
     DeliveryCostsComponent,
     OrderSummaryComponent,
-    RatingComponent
+    RatingComponent,
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [RestaurantsService, ShoppingCartService, OrderService,{ provide: LOCALE_ID, useValue: 'pt-BR' }],
+  providers: [RestaurantsService, ShoppingCartService, OrderService, { provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
