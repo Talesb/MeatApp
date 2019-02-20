@@ -6,6 +6,9 @@ export interface Restaurant {
     deliveryEstimate: String;
     rating: number;
     imagePath: String;
+    hours?: string;
+    about?: string;
+
 
 
 }
