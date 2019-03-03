@@ -4,7 +4,8 @@ class Order {
         public number: number,
         public optionalAddress: String,
         public paymentOption: String,
-        public orderItems: OrderItem[]=[]
+        public orderItems: OrderItem[] = [],
+        public id?: String
     ) { }
 }
 
@@ -15,4 +16,4 @@ class OrderItem {
     }
 }
 
-export{Order,OrderItem}
+export { Order, OrderItem }

@@ -1,5 +1,5 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -36,7 +36,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NotFoundComponent,
   ],
   imports: [
-    HttpModule,
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     SharedModule.forRoot(),
