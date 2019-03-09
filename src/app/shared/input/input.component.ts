@@ -16,6 +16,7 @@ export class InputComponent implements OnInit, AfterContentInit {
 
   @Input() label: String;
   @Input() errorMessage: String;
+  @Input() showTip: boolean = true;
 
   constructor() { }
 
