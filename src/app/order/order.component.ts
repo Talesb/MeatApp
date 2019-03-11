@@ -46,6 +46,8 @@ export class OrderComponent implements OnInit {
 
   numberPattern = /^[0-9]*$/
 
+  orderId: string;
+
   cartItens(): CartItem[] {
     return this.orderService.cartItems();
 
@@ -70,11 +72,19 @@ export class OrderComponent implements OnInit {
 
   checkOrder(order: Order) {
     order.orderItems = this.cartItens().map((item: CartItem) => new OrderItem(item.quantityValue(), item.itemId()))
-    this.orderService.checkOrder(order).subscribe((orderId: String) => {
-      console.log('Compra Concluida' + orderId);
-      this.orderService.clear();
-      this.router.navigate(['/order-summary']);
-    });
+    this.orderService.checkOrder(order)
+      .do((orderId: string) => {
+        this.orderId = orderId
+      })
+      .subscribe((orderId: String) => {
+        console.log('Compra Concluida' + orderId);
+        this.orderService.clear();
+        this.router.navigate(['/order-summary']);
+      });
+  }
+
+  isOrderCompleted(): boolean {
+    return this.orderId !== undefined;
   }
 
   ngOnInit() {

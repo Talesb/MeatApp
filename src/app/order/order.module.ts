@@ -6,11 +6,12 @@ import { DeliveryCostsComponent } from "./delivery-costs/delivery-costs.componen
 
 import { SharedModule } from "app/shared/shared.module";
 import { Routes, RouterModule } from "@angular/router";
+import { LeaverOrderGuard } from "app/security/leave-order.guard";
 
 
 
 const ROUTES: Routes = [
-    { path: '', component: OrderComponent }
+    { path: '', component: OrderComponent, canDeactivate: [LeaverOrderGuard] }
 ]
 
 
